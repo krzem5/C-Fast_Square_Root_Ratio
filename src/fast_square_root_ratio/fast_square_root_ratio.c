@@ -29,7 +29,11 @@ uint64_t fast_square_root_ratio(uint64_t n,uint8_t m,uint64_t* o){
 		a=t;
 		i++;
 	} while (i<m);
-	uint64_t c=((n&15)==4?7:FIND_FIRST_SET_BIT(a));
+	if ((n&15)==4){
+		*o=a>>7;
+		return b>>7;
+	}
+	uint64_t c=FIND_FIRST_SET_BIT(a);
 	a>>=c;
 	b>>=c;
 	if ((n&3)==3){
