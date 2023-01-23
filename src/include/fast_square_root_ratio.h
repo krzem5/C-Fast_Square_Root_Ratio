@@ -4,7 +4,7 @@
 
 
 
-uint64_t fast_square_root_ratio(uint64_t n,uint8_t m,uint64_t* o);
+uint64_t fast_square_root_ratio(uint64_t number,uint8_t iterations,uint64_t* numerator);
 
 
 
