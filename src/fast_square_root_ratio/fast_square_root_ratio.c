@@ -24,7 +24,7 @@ uint64_t fast_square_root_ratio(uint64_t n,uint8_t m,uint64_t* o){
 	uint64_t b=(n+1)<<2;
 	uint8_t i=1;
 	do{
-		uint64_t t=((a*a)>>(i+1))+((n*b*b)>>(i+1));
+		uint64_t t=(a*a+n*b*b)>>(i+1);
 		b=(a*b)>>i;
 		a=t;
 		i++;
