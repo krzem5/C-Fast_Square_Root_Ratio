@@ -4,10 +4,6 @@ import os
 
 
 
-DEFAULT_ARGS=[]
-
-
-
 if (os.path.exists("build")):
 	dl=[]
 	for r,ndl,fl in os.walk("build"):
@@ -33,7 +29,7 @@ if (os.name=="nt"):
 			sys.exit(1)
 	os.chdir(cd)
 	if ("--run" in sys.argv):
-		subprocess.run(["build/fast_square_root_ratio.exe"]+DEFAULT_ARGS)
+		subprocess.run(["build/fast_square_root_ratio.exe"])
 else:
 	if ("--release" in sys.argv):
 		fl=[]
@@ -58,4 +54,4 @@ else:
 		if (subprocess.run(["gcc","-o","build/fast_square_root_ratio"]+fl+["-lm"]).returncode!=0):
 			sys.exit(1)
 	if ("--run" in sys.argv):
-		subprocess.run(["build/fast_square_root_ratio"]+DEFAULT_ARGS)
+		subprocess.run(["build/fast_square_root_ratio"])
